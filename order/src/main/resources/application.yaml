@@ -1,10 +1,10 @@
 spring:
   application:
-    name: account
+    name: order
   profiles:
     active: "prod"
   datasource:
-    url: jdbc:postgresql://localhost:5432/accountdb
+    url: jdbc:postgresql://localhost:5434/orderdb
     username: postgres
     password: postgres
   jpa:
@@ -15,7 +15,7 @@ spring:
   config:
     import: "optional:configserver:http://localhost:8071/"
 server:
-  port: 8080
+  port: 8083
 
 
 management:
@@ -46,6 +46,6 @@ eureka:
 
 info:
   app:
-    name: "account"
-    description: "Account MS"
+    name: "order"
+    description: "Order MS"
     version: "1.0.0"

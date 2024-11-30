@@ -1,10 +1,10 @@
 spring:
   application:
-    name: account
+    name: cart
   profiles:
     active: "prod"
   datasource:
-    url: jdbc:postgresql://localhost:5432/accountdb
+    url: jdbc:postgresql://localhost:5433/cartdb
     username: postgres
     password: postgres
   jpa:
@@ -15,7 +15,7 @@ spring:
   config:
     import: "optional:configserver:http://localhost:8071/"
 server:
-  port: 8080
+  port: 8081
 
 
 management:
@@ -46,6 +46,6 @@ eureka:
 
 info:
   app:
-    name: "account"
-    description: "Account MS"
+    name: "cart"
+    description: "Cart MS"
     version: "1.0.0"
