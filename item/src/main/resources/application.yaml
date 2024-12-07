@@ -4,7 +4,7 @@ spring:
   profiles:
     active: "prod"
   datasource:
-    url: jdbc:postgresql://localhost:5435/itemdb
+    url: jdbc:postgresql://localhost:5434/itemdb
     username: postgres
     password: postgres
   jpa:
