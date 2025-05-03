@@ -1,4 +1,4 @@
-package com.thedarkhorse.account.repository;
+package com.thedarkhorse.account.repository.account;
 
 import com.thedarkhorse.account.model.Account;
 

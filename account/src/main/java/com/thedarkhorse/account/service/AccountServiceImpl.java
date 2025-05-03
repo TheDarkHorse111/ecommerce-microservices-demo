@@ -2,8 +2,8 @@ package com.thedarkhorse.account.service;
 
 import com.thedarkhorse.account.model.Account;
 import com.thedarkhorse.account.model.Cart;
-import com.thedarkhorse.account.repository.AccountRepository;
-import com.thedarkhorse.account.repository.CartRepository;
+import com.thedarkhorse.account.repository.account.AccountRepository;
+import com.thedarkhorse.account.repository.cart.CartRepository;
 import jakarta.transaction.Transactional;
 
 import static com.thedarkhorse.account.constant.CartStatus.AVAILABLE;

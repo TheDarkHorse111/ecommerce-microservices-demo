@@ -1,4 +1,4 @@
-package com.thedarkhorse.account.repository;
+package com.thedarkhorse.account.repository.account;
 
 import com.thedarkhorse.account.entity.AccountEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
