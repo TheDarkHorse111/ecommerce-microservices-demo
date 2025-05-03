@@ -1,4 +1,4 @@
-package com.thedarkhorse.account.repository;
+package com.thedarkhorse.account.repository.cart;
 
 import com.thedarkhorse.account.mapper.CartMapper;
 import com.thedarkhorse.account.model.Cart;
