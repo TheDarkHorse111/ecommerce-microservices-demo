@@ -1,5 +1,6 @@
 package com.thedarkhorse.order.controller;
 
+import com.thedarkhorse.order.model.CartItem;
 import com.thedarkhorse.order.model.PurchaseOrder;
 import com.thedarkhorse.order.service.PurchaseOrderService;
 import org.springframework.http.ResponseEntity;
@@ -7,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
@@ -21,7 +24,7 @@ public class PurchaseOrderController {
     }
 
     @PostMapping
-    public ResponseEntity<PurchaseOrder> addOrder(@RequestBody PurchaseOrder purchaseOrder) {
-        return ResponseEntity.status(CREATED).body(service.save(purchaseOrder));
+    public ResponseEntity<PurchaseOrder> addOrder(@RequestBody List<CartItem> cartItems) {
+        return ResponseEntity.status(CREATED).body(service.createPurchaseOrder(cartItems));
     }
 }

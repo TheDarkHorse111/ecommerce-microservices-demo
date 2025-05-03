@@ -1,15 +1,17 @@
 package com.thedarkhorse.order.entity;
 
+import com.thedarkhorse.order.constant.OrderStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.time.Instant;
+
+import static jakarta.persistence.EnumType.STRING;
 
 @Getter
 @Setter
@@ -25,11 +27,8 @@ public class PurchaseOrderEntity extends BaseEntity {
     @Column(name = "total", nullable = false, precision = 5, scale = 2)
     private BigDecimal total;
 
-    @NotNull
-    @Column(name = "payed_at", nullable = false)
-    private Instant payedAt;
 
-    @Size(max = 255)
     @Column(name = "status")
-    private String status;
+    @Enumerated(STRING)
+    private OrderStatus status;
 }

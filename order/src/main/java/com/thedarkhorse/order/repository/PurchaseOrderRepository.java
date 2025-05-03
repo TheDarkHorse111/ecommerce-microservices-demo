@@ -2,9 +2,11 @@ package com.thedarkhorse.order.repository;
 
 import com.thedarkhorse.order.model.PurchaseOrder;
 
+import java.util.List;
+
 public interface PurchaseOrderRepository {
 
     PurchaseOrder save(PurchaseOrder purchaseOrder);
 
-    PurchaseOrder findByCartId(long cartId);
+    List<PurchaseOrder> findByCartId(long cartId);
 }

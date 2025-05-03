@@ -3,6 +3,8 @@ package com.thedarkhorse.order.repository;
 import com.thedarkhorse.order.mapper.PurchaseOrderMapper;
 import com.thedarkhorse.order.model.PurchaseOrder;
 
+import java.util.List;
+
 public class PurchaseOrderRepositoryImpl implements PurchaseOrderRepository {
 
     private final PurchaseOrderJpaRepository repository;
@@ -19,9 +21,10 @@ public class PurchaseOrderRepositoryImpl implements PurchaseOrderRepository {
     }
 
     @Override
-    public PurchaseOrder findByCartId(long cartId) {
+    public List<PurchaseOrder> findByCartId(long cartId) {
         return repository.findByCartId(cartId)
+                .stream()
                 .map(mapper::toPurchaseOrder)
-                .orElseThrow(() -> new RuntimeException("Order not found"));
+                .toList();
     }
 }

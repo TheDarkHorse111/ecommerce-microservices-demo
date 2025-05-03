@@ -1,9 +1,12 @@
 package com.thedarkhorse.order.service;
 
+import com.thedarkhorse.order.model.CartItem;
 import com.thedarkhorse.order.model.PurchaseOrder;
 
-public interface PurchaseOrderService {
-    PurchaseOrder save(PurchaseOrder purchaseOrder);
+import java.util.List;
 
-    PurchaseOrder findByCartId(long cartId);
+public interface PurchaseOrderService {
+    PurchaseOrder createPurchaseOrder(List<CartItem> cartItems);
+
+    List<PurchaseOrder> findByCartId(long cartId);
 }
